@@ -1,0 +1,35 @@
+input{
+    border:none;
+    background-color: rgba(255,255,255,0);
+    border-bottom:solid black;
+    size:3px;
+    margin-left: 10px;
+    width: 85%;
+}
+
+label{
+    color: grey;
+}
+.form-group{
+    margin-top:30px;
+}
+form{
+    padding:12px;
+}
+
+#submitButton{
+    margin: 25px;
+    width: 40%;
+}
+
+#eyespan {
+    position: absolute;
+    right: 95px;
+    transform: translate(0, -50);
+    cursor: pointer;
+  }
+  
+.fa {
+    font-size: 20px;
+    color: #7a797e;
+}

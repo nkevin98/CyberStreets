@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CyberStreets</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript">
+      var state = false;
+    function togglePass() {
+        
+        if (state) {
+            document.getElementById("password").setAttribute("type", "password");
+            state = false;
+        } else {
+            document.getElementById("password").setAttribute("type", "text");
+            state = true;
+        }
+    }
+
+    function regDriver() {
+      console.log("Registering as Driver");
+      clearForm();
+      // Hide Payment Inputs
+      document.getElementById("card-details").style.display = 'none';
+      
+      // Show Car Detail Inputs
+      document.getElementById("dl-num").style.display = 'block';
+      document.getElementById("plate-num").style.display = 'block';
+      document.getElementById("car-make").style.display = 'block';
+      document.getElementById("car-model").style.display = 'block';
+      document.getElementById("car-year").style.display = 'block';
+
+    }
+
+    function regRider() {
+      console.log("Registering as Rider");
+      clearForm();
+      // Show Payment Inputs
+      document.getElementById("card-details").style.display = 'block';
+      
+      // Hide Car Detail Inputs
+      document.getElementById("dl-num").style.display = 'none';
+      document.getElementById("plate-num").style.display = 'none';
+      document.getElementById("car-make").style.display = 'none';
+      document.getElementById("car-model").style.display = 'none';
+      document.getElementById("car-year").style.display = 'none';
+    }
+
+    function clearForm() {
+      document.getElementById("regForm").reset();
+      console.log("form cleared");
+
+      // Clear the Car model dropdown
+      document.getElementById("carmodel").options.length = 0;
+      console.log("dropdown cleared");
+    }
+
+    function populate(make, model) {
+        console.log("test");
+        var make = document.getElementById(make);
+        var model = document.getElementById(model);
+        model.innerHTML = "";
+        if(make.value == "default") {
+            var optionArray = ["Select Car Make"];
+        }
+        if(make.value == "Acura") {
+            var optionArray = ["MDX", "RDX", "TLX", "ILX", "RLX", "Integra"];
+        }
+        if(make.value == "Alfa Romeo") {
+            var optionArray = ["164", "4C", "4C Spider", "Giulia", "Spider", "Stelvio", "Tonale"];
+        }
+        if(make.value == "Aston Martin") {
+            var optionArray = ["DB11", "DB9", "DBS", "Rapide", "Zagato", "Speedster", "Valhalla"];
+        }
+        if(make.value == "Audi") {
+            var optionArray = ["R8", "S8", "A3 Sedan", "A3 Sportback", "Q2", "SQ5", "Q5", "RS4 Avant", "TT RS Roadster", "A4", "Q7", "S6", "S4", "RS6 Avant", "RS7"];
+        }
+        if(make.value == "Bentley") {
+            var optionArray = ["Bentayga", "Flying Spur", "Continental GLC", "Continental GT", "Mulsanne", "Mulliner Bacalar"];
+        }
+        if(make.value == "BMW") {
+            var optionArray = ["M8 Coupe", "8 Series Coupe", "M8 Convertible", "8 Series Convertible", "X3", "X4", "i8", "6 Series Gran Turismo", "5 Series Sedan", "M4", "M5", "X6", "7 Series", "M3 Sedan", "X5", "X6", "i3", "Z4 Roadster", "X4 M", "X2", "iX M", "M8 Gran Coupe", "X7", "8 Series Gran Coupe"];
+        }
+        if(make.value == "Buick") {
+            var optionArray = ["Enclave", "Envision", "Encore", "Regal", "LaCrosse", "Regal Sportback"];
+        }
+        if(make.value == "Cadillac") {
+            var optionArray = ["Escalade", "XT5", "XTS", "CT6", "CT4", "XT4", "CT5-V", "XT6", "CT5"];
+        }
+        if(make.value == "Chevrolet") {
+            var optionArray = ["Blazer", "Bolt", "Equinox", "Suburban", "Tahoe", "Traverse", "Corvette Coupe", "Cruze", "Camaro", "Silverado", "Malibu", "Corvette Z06", "Corvette Convertible", "Impala", "Trailblazer", "Captiva", "Express", "Tracker", "Onix", "Prisma"];
+        }
+        if(make.value == "Chrysler") {
+            var optionArray = ["Pacifica", "300"];
+        }
+        if(make.value == "Citroen") {
+            var optionArray = ["C3 Aircross", "C4 Cactus", "C3"];
+        }
+        if(make.value == "Dacia") {
+            var optionArray = ["Duster", "Sandero", "Logan", "Dokker Van", "Dokker", "Jogger", "Lodgy", "Spring"];
+        }
+        if(make.value == "Dodge") {
+            var optionArray = ["Durango", "Challenger", "Charger", "Journey", "Ram"];
+        }
+        if(make.value == "Ferrari") {
+            var optionArray = ["Portofino", "Roma", "812", "Daytona", "488 Pista", "F8", "SF90", "GTC4Lusso"];
+        }
+        if(make.value == "Fiat") {
+            var optionArray = ["500 Abarth", "500X", "500", "Doblo", "Panda", "124 Spider", "500L Trekking", "Panda Cross", "Uno", "Tipo Cross", "Tipo", "Fullback", "Panda Cross City"];
+        }
+        if(make.value == "Ford") {
+            var optionArray = ["Focus Wagon", "Expedition", "Fiesta", "F-150", "Explorer", "Escape", "GT", "Galaxy", "Kuga", "Figo", "Fusion", "Edge", "Mustang", "Puma", "Bronco", "Maverick", "Transit Custom"];
+        }
+        if(make.value == "GMC") {
+            var optionArray = ["Sierra", "Terrain", "Yukon", "Savana", "Hummer"];
+        }
+        if(make.value == "Honda") {
+            var optionArray = ["Civic", "Accord", "Odyssey", "CR-V", "Pilot", "Insight", "NSX", "Passport", "S660"];
+        }
+        if(make.value == "Hummer") {
+            var optionArray = ["H1", "H2", "H3"];
+        }
+        if(make.value == "Hyundai") {
+            var optionArray = ["Kona", "Santa Fe", "i30", "i20", "Elantra", "Veloster", "Sonata", "Palisade", "Santa Cruz", "Mistra", "Staria", "NEXO", "Venue"];
+        }
+        if(make.value == "Infiniti") {
+            var optionArray = ["QX60", "QX80", "QX50", "Q70", "Q50", "QX30", "QX55"];
+        }
+        if(make.value == "Isuzu") {
+            var optionArray = ["Rodeo/D-Max"];
+        }
+        if(make.value == "Jaguar") {
+            var optionArray = ["F-Pace", "F-Type Convertible", "XE", "XJR", "XF", "XE SV"];
+        }
+        if(make.value == "Jeep") {
+            var optionArray = ["Compass", "Grand Cherokee", "Cherokee", "Renegade", "Wrangler", "Wagoneer", "Gladiator"];
+        }
+        if(make.value == "Kia") {
+            var optionArray = ["Sportage", "Sedona", "Stinger", "Ceed", "Forte", "Sorento", "Picanto", "Optima", "Niro", "K9", "Soul", "Rondo", "Forte Koup", "Stonic", "K5", "Seltos", "Telluride", "EV6"];
+        }
+        if(make.value == "Lamborghini") {
+            var optionArray = ["Huracan", "Aventador", "Centenario Roadster", "Urus", "Aventador Roadster", "Sian Roadster", "Sian", "Veneno Roaster"];
+        }
+        if(make.value == "Lancia") {
+            var optionArray = ["2000 Coupe", "A112", "Alpha"];
+        }
+        if(make.value == "Land Rover") {
+            var optionArray = ["Range Rover", "Discovery Sport", "Defender 90", "Discovery", "Range Rover L"];
+        }
+        if(make.value == "Lexus") {
+            var optionArray = ["ES", "NX", "LX", "IS", "LS", "GX", "RX", "RC", "CT", "RC F", "LC", "GS F", "UX"];
+        }
+        if(make.value == "Lincoln") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Lotus") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Maserati") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Mazda") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Mercedes-Benz") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Mercury") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Mini") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Mitsubishi") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Nissan") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Opel") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Peugeot") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Pontiac") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Porsche") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Ram") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Renault") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Saab") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Saturn") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Scion") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Seat") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Skoda") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "SsangYong") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Subaru") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Suzuki") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Tesla") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Toyota") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Volkswagen") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Volvo") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        if(make.value == "Wiesmann") {
+            var optionArray = ["CL", "ILX", "Integra"];
+        }
+        
+
+        for(var option in optionArray) {
+            //var pair = optionArray[option].split("|");
+            var newOption = document.createElement("option");
+            newOption.value = optionArray[option];
+            newOption.innerHTML = optionArray[option];
+            model.options.add(newOption);
+        }
+    }
+</script>    
+</head>
+<body>
+  
+  <app-root></app-root>
+ 
+</body>
+</html>

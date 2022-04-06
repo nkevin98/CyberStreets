@@ -1,0 +1,27 @@
+
+
+#appContainer{
+    height: 100%;
+    width: 100%;
+    background-image: url("src\app\cyberstreetsbg.png");
+    background-size: cover;
+    min-height: 100vh;
+    overflow: scroll;
+  
+}
+
+#cardStyle{
+    background-color: rgb(255,255,255,0.4);
+    box-shadow: 5px 3px 10px 5px gray;
+
+    /* Center the signin box */
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+
+
+    margin: 10%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
