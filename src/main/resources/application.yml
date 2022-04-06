@@ -1,0 +1,19 @@
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  datasource:
+    password: Cyberstreet@321
+    url: jdbc:sqlserver://cyberstreet.database.windows.net:1433;database=az-cyberstreet-db-group-02;user=sqluser@cyberstreet;password=Cyberstreet@321;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    username: sqluser@cyberstreet
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+        format_sql: true
+    show-sql: true
+
